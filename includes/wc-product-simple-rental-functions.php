@@ -48,3 +48,9 @@ function irent_change_product_html( $price_html, $product ) {
 	return $price_html;
 }
 add_filter( 'woocommerce_get_price_html', 'irent_change_product_html', 10, 2 );
+
+// Enqueue Stylesheet
+function irent_enqueue_style () {
+  wp_enqueue_style( 'wc-rental-products', plugin_dir_url( __FILE__ ) . 'public/css/wc-rental-products.css' );
+}
+add_action( 'wp_enqueue_scripts', 'irent_enqueue_style');

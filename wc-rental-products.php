@@ -160,8 +160,6 @@ class WC_Rental_Products_Plugin {
   public function load_plugin() {
     require_once 'includes/class-wc-product-simple-rental.php';
     require_once 'includes/wc-product-simple-rental-functions.php';
-
-    wp_enqueue_style( 'wc-rental-products', plugin_dir_url( __FILE__ ) . 'public/css/wc-rental-products.css' );
   }
 }
 
