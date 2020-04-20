@@ -23,9 +23,9 @@ add_action( 'woocommerce_before_shop_loop', 'irent_show_product_subcategories' )
 // Change the price display for simple rental products
 function irent_change_product_html( $price_html, $product ) {
 
-	if ($product->is_type('simple_rental')) 
+	if ($product->is_type('simple_rental'))
 	{
-	  $price_html =  
+	  $price_html =
 	  '<table class="table table-dark">
 	     <thead>
 	       <tr>
@@ -36,15 +36,15 @@ function irent_change_product_html( $price_html, $product ) {
 	     </thead>
 	     <tbody>
 	       <tr>
-	         <td>$' . $product->get_4_hour_rate() . '</td>
-	         <td>$' . $product->get_daily_rate() . '</td>
-	         <td>$' . $product->get_weekly_rate() . '</td>
+	         <td class="text-center table-dark d-none d-sm-table-cell">$' . $product->get_4_hour_rate() . '</td>
+	         <td class="text-center table-dark">$' . $product->get_daily_rate() . '</td>
+	         <td class="text-center table-dark d-none d-sm-table-cell">$' . $product->get_weekly_rate() . '</td>
 	       </tr>
 	     </tbody>
 	   </table>';
-	 
+
 	}
-	
+
 	return $price_html;
 }
 add_filter( 'woocommerce_get_price_html', 'irent_change_product_html', 10, 2 );
