@@ -51,6 +51,12 @@ function irent_change_product_html( $price_html, $product ) {
 }
 add_filter( 'woocommerce_get_price_html', 'irent_change_product_html', 10, 2 );
 
+// remove subcategory count
+add_filter( ‘woocommerce_subcategory_count_html’, ‘irent_remove_category_products_count’ );
+function irent_remove_category_products_count() {
+return;
+}
+
 // Enqueue Stylesheet
 function irent_enqueue_style () {
   wp_enqueue_style( 'wc-rental-products', plugins_url('wc-rental-products.css', __FILE__ ) );
