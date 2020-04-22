@@ -26,22 +26,24 @@ function irent_change_product_html( $price_html, $product ) {
 	if ($product->is_type('simple_rental'))
 	{
 	  $price_html =
-	  '<table class="table table-dark">
-	     <thead>
-	       <tr>
-	         <th scope="col" class="rental-price-header text-center table-dark d-none d-sm-table-cell" style="width:12%">4 Hours</th>
-             <th scope="col" class="rental-price-header text-center table-dark" style="width:12%">Daily</th>
-             <th scope="col" class="rental-price-header text-center table-dark d-none d-sm-table-cell" style="width:12%">Weekly</th>
-           </tr>
-	     </thead>
-	     <tbody>
-	       <tr>
-	         <td class="rental-price text-center table-dark d-none d-sm-table-cell">$' . $product->get_4_hour_rate() . '</td>
-	         <td class="rental-price text-center table-dark">$' . $product->get_daily_rate() . '</td>
-	         <td class="rental-price text-center table-dark d-none d-sm-table-cell">$' . $product->get_weekly_rate() . '</td>
-	       </tr>
-	     </tbody>
-	   </table>';
+	  '<div class="table-responsive">
+      <table class="table table-dark">
+	       <thead>
+	         <tr>
+	           <th scope="col" class="rental-price-header text-center table-dark d-sm-table-cell" style="width:12%">4 Hours</th>
+               <th scope="col" class="rental-price-header text-center table-dark" style="width:12%">Daily</th>
+               <th scope="col" class="rental-price-header text-center table-dark d-sm-table-cell" style="width:12%">Weekly</th>
+             </tr>
+	       </thead>
+	       <tbody>
+	         <tr>
+	           <td class="rental-price text-center table-dark d-sm-table-cell">$' . $product->get_4_hour_rate() . '</td>
+	           <td class="rental-price text-center table-dark">$' . $product->get_daily_rate() . '</td>
+	           <td class="rental-price text-center table-dark d-sm-table-cell">$' . $product->get_weekly_rate() . '</td>
+	         </tr>
+	       </tbody>
+	     </table>
+     </div>';
 
 	}
 
