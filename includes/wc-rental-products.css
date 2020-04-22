@@ -3,3 +3,7 @@
   letter-spacing: normal;
   text-transform: none;
 }
+
+.woocommerce-loop-category__title {
+  text-align: center;
+}
