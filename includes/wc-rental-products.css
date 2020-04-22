@@ -7,3 +7,8 @@
 .woocommerce-loop-category__title, .woocommerce-loop-product__title {
   text-align: center;
 }
+
+.woocommerce ul.products li.product .button {
+  display: block;
+  text-align: center;
+}
