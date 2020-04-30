@@ -15,8 +15,8 @@ function irent_show_product_subcategories( $args = array() ) {
     woocommerce_output_product_categories($args);
     wc_get_template( 'loop/loop-end.php' );
 }
-remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
-add_action( 'woocommerce_before_shop_loop', 'irent_show_product_subcategories' );
+//remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
+//add_action( 'woocommerce_before_shop_loop', 'irent_show_product_subcategories' );
 
 
 
