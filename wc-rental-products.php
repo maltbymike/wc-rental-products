@@ -160,7 +160,7 @@ class WC_Rental_Products_Plugin {
   public function load_plugin() {
     require_once 'includes/class-wc-product-simple-rental.php';
     require_once 'includes/wc-product-simple-rental-functions.php';
-    require_once 'includes/wc-product-archive-list-view-funcitons.php';
+    require_once 'includes/wc-product-archive-list-view-functions.php';
   }
 }
 
