@@ -56,3 +56,7 @@ function irent_enqueue_style () {
   wp_enqueue_style( 'wc-rental-products', plugins_url('wc-rental-products.css', __FILE__ ) );
 }
 add_action( 'wp_enqueue_scripts', 'irent_enqueue_style');
+
+
+// Remove Subcategory Count
+add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
