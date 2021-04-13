@@ -52,7 +52,7 @@ function irent_change_product_html( $price_html, $product ) {
 add_filter( 'woocommerce_get_price_html', 'irent_change_product_html', 10, 2 );
 
 // remove subcategory count
-add_filter( ‘woocommerce_subcategory_count_html’, ‘__return_null’ );
+add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 
 // Enqueue Stylesheet
 function irent_enqueue_style () {
