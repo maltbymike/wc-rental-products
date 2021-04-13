@@ -143,7 +143,10 @@ class WC_Rental_Products_Plugin {
     ?>
     <script type='text/javascript'>
       jQuery( document ).ready( function() {
+        //for General Tab
         jQuery( '.options_group.pricing' ).addClass( 'show_if_simple_rental' ).show();
+        //for Inventory tab
+        jQuery('.inventory_options').addClass('show_if_simple_rental').show();
       })
     </script>
     <?php
