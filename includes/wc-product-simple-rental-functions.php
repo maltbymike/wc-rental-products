@@ -15,8 +15,8 @@ function irent_show_product_subcategories( $args = array() ) {
     woocommerce_output_product_categories($args);
     wc_get_template( 'loop/loop-end.php' );
 }
-remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
-add_action( 'woocommerce_before_shop_loop', 'irent_show_product_subcategories' );
+//remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
+//add_action( 'woocommerce_before_shop_loop', 'irent_show_product_subcategories' );
 
 
 
@@ -52,10 +52,7 @@ function irent_change_product_html( $price_html, $product ) {
 add_filter( 'woocommerce_get_price_html', 'irent_change_product_html', 10, 2 );
 
 // remove subcategory count
-add_filter( ‘woocommerce_subcategory_count_html’, ‘irent_remove_category_products_count’ );
-function irent_remove_category_products_count() {
-return;
-}
+add_filter( ‘woocommerce_subcategory_count_html’, ‘__return_null’ );
 
 // Enqueue Stylesheet
 function irent_enqueue_style () {
