@@ -135,6 +135,7 @@ class WC_Rental_Products_Plugin {
 
   /**
   * Show pricing tab for simple_rental product and variation checkboxes on attributes
+  * Jquery from https://stackoverflow.com/questions/42835590/how-to-add-variations-tab-in-custom-product-type-in-woocommerce
   */
   function simple_rental_custom_js() {
 
