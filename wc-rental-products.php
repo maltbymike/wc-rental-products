@@ -53,6 +53,8 @@ class WC_Rental_Products_Plugin {
       'class'   => 'show_if_simple_rental'
     );
 
+    $tabs['variations']['class'][] = 'show_if_simple_rental';
+
     return $tabs;
 
   }
