@@ -54,7 +54,7 @@ class WC_Rental_Products_Plugin {
     );
 
     $tabs['variations']['class'][] = 'show_if_simple_rental';
-
+    
     return $tabs;
 
   }
@@ -134,7 +134,7 @@ class WC_Rental_Products_Plugin {
 
 
   /**
-  * Show pricing tab for simple_rental product
+  * Show pricing tab for simple_rental product and variation checkboxes on attributes
   */
   function simple_rental_custom_js() {
 
@@ -153,6 +153,28 @@ class WC_Rental_Products_Plugin {
         jQuery('#inventory_product_data ._manage_stock_field').addClass('show_if_simple_rental').show();
         jQuery('#inventory_product_data ._sold_individually_field').parent().addClass('show_if_simple_rental').show();
         jQuery('#inventory_product_data ._sold_individually_field').addClass('show_if_simple_rental').show();
+      });
+
+      jQuery( function ( $ ) {
+
+        // Variable type options are valid for variable workshop.
+        $( '.show_if_variable:not(.hide_if_simple_rental)' ).addClass( 'show_if_simple_rental' );
+
+        // Trigger change
+        $( 'select#product-type' ).change();
+
+        // Show variable type options when new attribute is added.
+        $( document.body ).on( 'woocommerce_added_attribute', function(e) {
+
+            $( '#product_attributes .show_if_variable:not(.hide_if_simple_rental)' ).addClass( 'show_if_simple_rental' );
+
+            var $attributes     = $( '#product_attributes' ).find( '.woocommerce_attribute' );
+
+            if ( 'simple_rental' == $( 'select#product-type' ).val() ) {
+                $attributes.find( '.enable_variation' ).show();
+            }
+        });
+
       });
     </script>
     <?php
