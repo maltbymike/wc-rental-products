@@ -4,7 +4,7 @@
 * Simple Rental Product Type Class
 */
 
-class WC_Product_Simple_Rental extends WC_Product_Simple {
+class WC_Product_Simple_Rental extends WC_Product_Variable {
 
   public function __construct( $product ) {
 
